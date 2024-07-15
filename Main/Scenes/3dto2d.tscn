@@ -1,24 +1,12 @@
-[gd_scene load_steps=17 format=4 uid="uid://j86dvdyviohc"]
+[gd_scene load_steps=14 format=4 uid="uid://j86dvdyviohc"]
 
-[ext_resource type="Shader" path="res://shader/3d.gdshader" id="1_7o0oh"]
 [ext_resource type="Script" path="res://Main/Scripts/camera_2d.gd" id="3_e0ffb"]
+[ext_resource type="PackedScene" uid="uid://biwwomf3ggs2y" path="res://Main/Scenes/char.tscn" id="3_sb0fo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xevw2"]
 size = Vector2(18.27, 18.74)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r472r"]
-render_priority = 0
-shader = ExtResource("1_7o0oh")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="QuadMesh" id="QuadMesh_hdmtx"]
-material = SubResource("ShaderMaterial_r472r")
 flip_faces = true
 size = Vector2(10.34, 16.32)
 
@@ -32,8 +20,9 @@ emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk5u0"]
 resource_name = "Material"
+transparency = 1
 cull_mode = 2
-albedo_color = Color(0, 0.83812, 1, 1)
+albedo_color = Color(0, 0.833333, 1, 0.811765)
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ad0m5"]
@@ -94,6 +83,7 @@ shadow_mesh = SubResource("ArrayMesh_ad0m5")
 
 [sub_resource type="Animation" id="Animation_vu8lu"]
 length = 10.0
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,36 +137,30 @@ _data = {
 "new_animation_2": SubResource("Animation_a6oh7")
 }
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_andoa"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_c02bc"]
-sky_material = SubResource("ProceduralSkyMaterial_andoa")
-
 [sub_resource type="Environment" id="Environment_m1yq7"]
 background_mode = 1
-background_color = Color(0, 1, 0.533333, 1)
-sky = SubResource("Sky_c02bc")
+background_color = Color(0, 0.63, 0.6195, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.713726, 0.713726, 0.713726, 1)
 tonemap_mode = 2
-glow_enabled = true
+glow_intensity = 2.05
 
 [node name="Node2D" type="Node2D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
-offset_left = 46.3849
-offset_top = 76.5136
-offset_right = 386.385
-offset_bottom = 416.514
+offset_left = -17.5634
+offset_top = -7.60864
+offset_right = 322.437
+offset_bottom = 352.391
+scale = Vector2(1.00897, 0.949223)
 stretch = true
-stretch_shrink = 3
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(113, 113)
+use_debanding = true
+mesh_lod_threshold = 0.0
+size = Vector2i(340, 360)
 render_target_update_mode = 4
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
@@ -187,17 +171,18 @@ mesh = SubResource("PlaneMesh_xevw2")
 transform = Transform3D(1, 0, 0, 0, 0.784365, 0.620299, 0, -0.620299, 0.784365, 0.0812759, 1.54466, 1.48638)
 
 [node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19915, 0.0879937, -1.18119)
+transform = Transform3D(3.415, 0, 0, 0, 3.415, 0, 0, 0, 3.415, 2.09713, 9.04416, -1.36957)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Marker3D"]
 transform = Transform3D(1, -1.66361e-09, -2.97559e-08, 0, 0.998441, -0.0558215, 2.98023e-08, 0.0558215, 0.998441, -0.16368, 1.50879, 3.66684)
 size = 3.8
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Marker3D/Camera3D"]
+visible = false
 mesh = SubResource("QuadMesh_hdmtx")
 
 [node name="Object" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(-2.1609e-06, 0, 0.596934, 0, 0.596934, 0, -0.596934, 0, -2.1609e-06, 2.19915, 0.0879937, -1.18119)
+transform = Transform3D(3.45629, 0, 0, 0, 3.45629, 0, 0, 0, 3.45629, 2.91841, 2.49962, -1.53768)
 mesh = SubResource("ArrayMesh_vmc6c")
 skeleton = NodePath("")
 
@@ -207,11 +192,14 @@ libraries = {
 }
 autoplay = "new_animation_2"
 
+[node name="Low Poly SuperHero_Walking" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_sb0fo")]
+transform = Transform3D(4.00233, 0, 32.6435, 0, 32.8879, 0, -32.6435, 0, 4.00233, 1.17958, 12.1591, -0.675851)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m1yq7")
 
 [node name="WearOS_Camera" type="Camera2D" parent="."]
-position = Vector2(216.965, 252.071)
+position = Vector2(154.457, 162.017)
 zoom = Vector2(1.32, 1.32)
 editor_draw_screen = false
 script = ExtResource("3_e0ffb")

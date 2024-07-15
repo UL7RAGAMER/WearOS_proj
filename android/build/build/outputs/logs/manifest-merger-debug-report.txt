@@ -6,9 +6,9 @@ INJECTED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:29:9-
 manifest
 ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:2:1-56:12
 MERGED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:2:1-32:12
 MERGED from [godot-lib.template_debug.aar] C:\Users\siddk\.gradle\caches\transforms-3\c266decb58b93beb5a5ece2cd70c676a\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\siddk\.gradle\caches\transforms-3\b4097669224ddbd8bd3811f8ecd82ae6\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\siddk\.gradle\caches\transforms-3\11ae483a3c51433cd5b5abfb4e92a9b8\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -91,7 +91,7 @@ application
 ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:18:5-54:19
 MERGED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:18:5-54:19
 MERGED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:18:5-54:19
-INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:13:5-30:19
+INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:14:5-31:19
 MERGED from [godot-lib.template_debug.aar] C:\Users\siddk\.gradle\caches\transforms-3\c266decb58b93beb5a5ece2cd70c676a\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
 MERGED from [godot-lib.template_debug.aar] C:\Users\siddk\.gradle\caches\transforms-3\c266decb58b93beb5a5ece2cd70c676a\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\siddk\.gradle\caches\transforms-3\b4097669224ddbd8bd3811f8ecd82ae6\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
@@ -126,7 +126,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\siddk\.gradle\cach
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:20:9-36
 		REJECTED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:20:9-36
 	tools:replace
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:20:9-143
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:21:9-143
 	android:isGame
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:23:9-30
 		REJECTED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:23:9-30
@@ -139,7 +139,7 @@ MERGED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:33:9-52
 MERGED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:33:9-52:20
 REJECTED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:47:13-51:29
 	tools:node
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:23:154-186
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:24:154-186
 	android:screenOrientation
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:42:13-49
 		REJECTED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:42:13-49
@@ -168,7 +168,7 @@ REJECTED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:47:13
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:36:13-44
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:36:13-44
 	tools:replace
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:23:58-153
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:24:58-153
 	android:name
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:34:13-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
@@ -185,26 +185,30 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:50:17-77
 	android:name
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:50:27-74
-uses-feature#android.hardware.vulkan.level
-ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:11:5-132
-	android:version
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:11:110-129
-	tools:node
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:11:19-39
-	android:required
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:11:85-109
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:11:40-84
-uses-feature#android.hardware.vulkan.version
-ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:5-140
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:11:22-64
+uses-feature#android.hardware.vulkan.level
+ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:5-132
 	android:version
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:111-137
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:110-129
 	tools:node
 		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:19-39
 	android:required
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:87-110
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:85-109
 	android:name
-		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:40-86
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:12:40-84
+uses-feature#android.hardware.vulkan.version
+ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:13:5-140
+	android:version
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:13:111-137
+	tools:node
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:13:19-39
+	android:required
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:13:87-110
+	android:name
+		ADDED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml:13:40-86
 uses-sdk
 INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\siddk\Godot\test2\android\build\src\debug\AndroidManifest.xml

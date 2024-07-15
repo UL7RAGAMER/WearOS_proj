@@ -1,0 +1,12 @@
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+*.aar filter=lfs diff=lfs merge=lfs -text
+*.so filter=lfs diff=lfs merge=lfs -text
+*.apk filter=lfs diff=lfs merge=lfs -text
+android/build/build/intermediates/merged_jni_libs/debug/out/godot-lib.template_debug.aar filter=lfs diff=lfs merge=lfs -text
+android/build/build/intermediates/merged_native_libs/debug/out/lib/arm64-v8a/libgodot_android.so filter=lfs diff=lfs merge=lfs -text
+android/build/build/intermediates/merged_native_libs/debug/out/lib/armeabi-v7a/libgodot_android.so filter=lfs diff=lfs merge=lfs -text
+android/build/build/intermediates/merged_native_libs/debug/out/lib/x86/libgodot_android.so filter=lfs diff=lfs merge=lfs -text
+android/build/build/intermediates/merged_native_libs/debug/out/lib/x86_64/libgodot_android.so filter=lfs diff=lfs merge=lfs -text
+android/build/libs/release/godot-lib.template_release.aar filter=lfs diff=lfs merge=lfs -text
+android/build/build/outputs/apk/debug/android_debug.apk filter=lfs diff=lfs merge=lfs -text
