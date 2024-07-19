@@ -15,5 +15,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Main/Scenes/3dto2d.tscn")
+	get_tree().change_scene_to_file("res://Main/Scenes/Main.tscn")
 	pass # Replace with function body.

@@ -17,12 +17,12 @@ run/max_fps=30
 
 [display]
 
-window/size/viewport_width=400
-window/size/viewport_height=401
+window/size/viewport_width=500
+window/size/viewport_height=500
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/wearos_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/gd-blender-3d-shortcuts/plugin.cfg")
 
 [global]
 
@@ -44,6 +44,11 @@ right={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(126, 3),"global_position":Vector2(135, 49),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+snipe={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(80, 6),"global_position":Vector2(89, 52),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [input_devices]
 
@@ -54,4 +59,3 @@ pointing/android/rotary_input_scroll_axis=0
 
 textures/canvas_textures/default_texture_filter=3
 textures/vram_compression/import_etc2_astc=true
-viewport/transparent_background=true

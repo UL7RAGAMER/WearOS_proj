@@ -87,6 +87,10 @@ MERGED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:14:5-16
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:15:9-41
 	android:required
 		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:16:9-32
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:17:5-68
+	android:name
+		ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:17:22-65
 application
 ADDED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:18:5-54:19
 MERGED from C:\Users\siddk\Godot\test2\android\build\AndroidManifest.xml:18:5-54:19
