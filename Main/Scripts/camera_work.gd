@@ -1,7 +1,7 @@
 extends Marker3D
 var cur_pos = Vector3.ZERO
 var last_pos = Vector3.ZERO
-
+@onready var gun: Gun = %Gun
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	rotaing_camera(5)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventScreenDrag:
+	if event is InputEventScreenDrag and !(gun.scoped):
 		var dir = 0
 		if event.relative.y >0:
 			dir = 1
@@ -23,9 +23,9 @@ func _input(event: InputEvent) -> void:
 		$"../../../Label2".text = str(dir)
 		position.y+=8*dir*get_process_delta_time()
 func rotaing_camera(deg:int) -> void:
-	if Input.is_action_just_released("left"):
+	if Input.is_action_just_released("left") and !(gun.scoped):
 		rotation_degrees.y+=deg
-	elif Input.is_action_just_released("right"):
+	elif Input.is_action_just_released("right") and !(gun.scoped):
 		rotation_degrees.y+=-deg
 	pass
 func lock_camera() -> void:

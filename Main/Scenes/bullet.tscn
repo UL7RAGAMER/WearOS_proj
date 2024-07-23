@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cb7tseclovjt3"]
+[gd_scene load_steps=24 format=4 uid="uid://cb7tseclovjt3"]
 
 [ext_resource type="Script" path="res://Main/Scenes/bullet.gd" id="1_1qnd4"]
 [ext_resource type="Texture2D" uid="uid://3j5pnrputy67" path="res://Assets/3D/sniper_bullet_0.png" id="1_4fklg"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dqr3yciw7u5e1" path="res://Assets/3D/sniper_bullet_2.png" id="3_0n3os"]
 [ext_resource type="Texture2D" uid="uid://d00rstf6pwdav" path="res://Assets/3D/sniper_bullet_3.png" id="4_hyue6"]
 [ext_resource type="Texture2D" uid="uid://db6o4n8oguyv3" path="res://Assets/3D/sniper_bullet_4.png" id="5_dluft"]
+[ext_resource type="Shader" path="res://GPUTrail-main/shaders/trail.gdshader" id="7_afyn6"]
+[ext_resource type="Shader" path="res://GPUTrail-main/shaders/trail_draw_pass.gdshader" id="8_vf6qk"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://GPUTrail-main/defaults/texture.tres" id="9_uqyiw"]
+[ext_resource type="Texture2D" uid="uid://ct31fhxvcragr" path="res://GPUTrail-main/defaults/curve.tres" id="10_lg813"]
+[ext_resource type="Script" path="res://GPUTrail-main/GPUTrail3D.gd" id="11_4fhbr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gslon"]
 resource_name = "Material_Projetil"
@@ -105,22 +110,63 @@ shadow_mesh = SubResource("ArrayMesh_2g8r2")
 radius = 0.161956
 height = 0.925269
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmmid"]
+shader = ExtResource("7_afyn6")
+
+[sub_resource type="Gradient" id="Gradient_3vt8c"]
+colors = PackedColorArray(1, 0.933333, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_af54b"]
+gradient = SubResource("Gradient_3vt8c")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pf0x3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("8_vf6qk")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 44
+shader_parameter/tex = SubResource("GradientTexture1D_af54b")
+shader_parameter/color_ramp = ExtResource("9_uqyiw")
+shader_parameter/curve = ExtResource("10_lg813")
+
+[sub_resource type="QuadMesh" id="QuadMesh_e7lja"]
+material = SubResource("ShaderMaterial_pf0x3")
+
 [node name="Node3D" type="Area3D"]
-transform = Transform3D(24.835, 0, 0, 0, 24.835, 0, 0, 0, 24.835, 0, 0, 0)
+transform = Transform3D(49.67, 0, 0, 0, 49.67, 0, 0, 0, 49.67, 0, 0, -8.715)
 script = ExtResource("1_1qnd4")
 
 [node name="Cylinder_001" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
 [node name="Cylinder_001_Material_Projetil_0" type="MeshInstance3D" parent="Cylinder_001"]
+layers = 2
 mesh = SubResource("ArrayMesh_5151x")
 
 [node name="Cylinder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
 [node name="Cylinder_Material_Capsula_0" type="MeshInstance3D" parent="Cylinder"]
+layers = 2
 mesh = SubResource("ArrayMesh_e2fre")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.103631)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0111282, -0.0236226, -0.150746)
 shape = SubResource("CapsuleShape3D_u257v")
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00097139, 0.0104845, -0.371179)
+layers = 2
+amount = 200
+lifetime = 200.0
+explosiveness = 1.0
+fixed_fps = 0
+process_material = SubResource("ShaderMaterial_pmmid")
+draw_pass_1 = SubResource("QuadMesh_e7lja")
+script = ExtResource("11_4fhbr")
+length = 200
+texture = SubResource("GradientTexture1D_af54b")
+color_ramp = ExtResource("9_uqyiw")
+curve = ExtResource("10_lg813")
+billboard = true
+_defaults_have_been_set = true
