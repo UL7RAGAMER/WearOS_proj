@@ -1,8 +1,7 @@
 class_name Gun
 extends Node3D
 var bullet = preload("res://Main/Scenes/bullet.tscn")
-var m_f = preload("res://Main/Scenes/muzzel_flash.tscn")
-var b_t = preload("res://Main/Scenes/bullet_trial.tscn")
+
 var scoped = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
