@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://j86dvdyviohc"]
+[gd_scene load_steps=26 format=4 uid="uid://j86dvdyviohc"]
 
 [ext_resource type="Script" path="res://Main/Scripts/camera_work.gd" id="1_xjy3m"]
 [ext_resource type="Script" path="res://Main/Scripts/marker_3d.gd" id="3_b1vk7"]
@@ -99,102 +99,107 @@ resource_name = "Gun"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../SubViewport2/Marker3D/Gun:rotation")
+tracks/0/path = NodePath("../Sniper ui/SniperLookFinderMesaDeTrabajo1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../SubViewport2/Marker3D/Gun:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../SubViewport2/Marker3D/Gun:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Sniper ui/SniperLookFinderMesaDeTrabajo1:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.965995, 0.966667),
 "transitions": PackedFloat32Array(0, 1, 0),
 "update": 1,
 "values": [false, false, true]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Sniper ui/TouchScreenButton:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sniper ui/TouchScreenButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.966667),
 "transitions": PackedFloat32Array(0.176777, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_p03v4"]
-resource_name = "new_animation"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Building:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Gun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.999531, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.252357, -0.103638, 9.41657), Vector3(-0.299594, -0.103638, 9.42791), Vector3(-0.299193, -0.103638, 9.63202), Vector3(-0.310017, -0.140155, 9.63202)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Gun:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.08805, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Gun/Operator valorent4/group1_001/Scope_002:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0186603, 0.997867, 0.998672),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_a6oh7"]
-resource_name = "new_animation_2"
-length = 10.0
-loop_mode = 2
+[sub_resource type="Animation" id="Animation_jhtuq"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../SubViewport2/Marker3D:rotation")
+tracks/0/path = NodePath("%Gun/Operator valorent4/group1_001/Scope_002:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+"values": [Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Gun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.252, -0.104, 9.417)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cy60j"]
 _data = {
 "Gun": SubResource("Animation_whj66"),
-"new_animation": SubResource("Animation_p03v4"),
-"new_animation_2": SubResource("Animation_a6oh7")
+"RESET": SubResource("Animation_jhtuq")
 }
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sd5gu"]
@@ -222,10 +227,8 @@ glow_intensity = 2.05
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
-offset_left = -27.7183
-offset_top = -16.379
-offset_right = 312.282
-offset_bottom = 323.621
+offset_right = 340.0
+offset_bottom = 340.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
@@ -278,7 +281,7 @@ script = ExtResource("3_b1vk7")
 x = NodePath("../../SubViewport2/Marker3D")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Marker3D"]
-transform = Transform3D(0.292826, 0.00032279, 0.000129715, -0.000322827, 0.292826, 8.3415e-05, -0.000129618, -8.3558e-05, 0.292826, -0.493254, 0.0178289, 4.27571)
+transform = Transform3D(1.46032, 0.00160975, 0.000646863, -0.00160994, 1.46032, 0.00041599, -0.000646404, -0.000416703, 1.46032, -0.493254, 0.0178289, 4.27571)
 cull_mask = 1048574
 h_offset = 1.615
 current = true
@@ -312,11 +315,14 @@ playback_default_blend_time = 0.27
 speed_scale = 4.0
 
 [node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport2"]
-transform = Transform3D(3.415, 0, -5.97098e-07, 0, 3.415, 0, 5.97098e-07, 0, 3.415, -0.008, 11, -0.258)
+transform = Transform3D(3.415, 0, 0, 0, 3.415, 0, 0, 0, 3.415, -0.008, 11, -0.258)
 script = ExtResource("1_xjy3m")
 
+[node name="Marker2D" type="Marker3D" parent="SubViewportContainer/SubViewport2/Marker3D"]
+transform = Transform3D(0.988, 0, 0, 0, 0.988, 0, 0, 0, 0.988, -0.337433, -0.0933142, 8.60767)
+
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport2/Marker3D"]
-transform = Transform3D(0.291867, 0.000328514, -0.023676, -0.000322827, 0.292826, 8.34149e-05, 0.023676, -5.70402e-05, 0.291867, -0.494586, 0.0178289, 4.29459)
+transform = Transform3D(0.292826, 0, 0, 0, 0.292826, 0, 0, 0, 0.292826, -0.346332, -0.0588763, 9.53872)
 cull_mask = 1048573
 current = true
 fov = 30.0
@@ -324,40 +330,58 @@ near = 0.001
 
 [node name="Gun" parent="SubViewportContainer/SubViewport2/Marker3D" instance=ExtResource("3_urjqg")]
 unique_name_in_owner = true
-transform = Transform3D(-0.172, 0, -1.50367e-08, 0, 0.172, 0, 1.50367e-08, 0, -0.172, -0.0400301, -0.148426, 3.08128)
+transform = Transform3D(-0.0419681, 0, 1.06397e-07, 0, 0.041968, 0, -1.06397e-07, 0, -0.0419681, -0.252, -0.104, 9.417)
 script = ExtResource("3_ew13m")
+
+[node name="Skeleton3D" parent="SubViewportContainer/SubViewport2/Marker3D/Gun/Operator valorent4/Armature" index="0"]
+bones/14/position = Vector3(-1.48843, -2.52199, 3.03963)
+bones/15/rotation = Quaternion(0.590702, -0.173661, 0.300347, 0.728495)
+bones/16/rotation = Quaternion(0.048916, -0.286204, 0.180413, 0.939758)
+bones/17/rotation = Quaternion(0.272935, -0.418729, -0.262292, 0.825455)
+bones/18/rotation = Quaternion(0.199183, 0.160099, 0.735358, 0.627648)
+bones/19/rotation = Quaternion(0.165636, 0.0885446, -0.537648, 0.821985)
+bones/21/rotation = Quaternion(0.024505, -0.1687, -0.132269, 0.976445)
+bones/23/rotation = Quaternion(0.276817, -0.0916002, 0.156355, 0.943681)
+bones/25/rotation = Quaternion(0.549639, -0.082647, 0.323059, 0.765963)
+bones/27/rotation = Quaternion(0.332455, 0.0250575, 0.746454, 0.575893)
+
+[node name="group1_001" parent="SubViewportContainer/SubViewport2/Marker3D/Gun/Operator valorent4" index="1"]
+transform = Transform3D(0.00998808, 0.000487997, -2.1331e-11, 0, -4.37114e-10, -0.01, -0.000487997, 0.00998808, -4.36593e-10, 0, 0, 0)
+
+[node name="Mag_002" parent="SubViewportContainer/SubViewport2/Marker3D/Gun/Operator valorent4/group1_001" index="2"]
+transform = Transform3D(99.9995, -0.155818, 0.291026, -0.311031, -14.9319, 98.8784, -0.110615, -98.8788, -14.9323, -22.0441, -304.993, 46.6268)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m1yq7")
 camera_attributes = SubResource("CameraAttributesPractical_en054")
 
-[node name="WearOS_Camera" type="Camera2D" parent="."]
-position = Vector2(142.684, 153.608)
-zoom = Vector2(1.32, 1.32)
-editor_draw_screen = false
-script = ExtResource("3_e0ffb")
-
 [node name="Label" type="Label" parent="."]
-offset_left = 130.684
-offset_top = -6.007
-offset_right = 2110.68
-offset_bottom = 1568.99
+offset_left = 148.664
+offset_top = 3.732
+offset_right = 2128.66
+offset_bottom = 1578.73
 scale = Vector2(0.162591, 0.162591)
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 141
-text = "144"
+text = "10"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 130.684
-offset_top = 132.586
-offset_right = 2110.68
-offset_bottom = 1707.58
+offset_left = 148.664
+offset_top = 142.325
+offset_right = 2128.66
+offset_bottom = 1717.32
 scale = Vector2(0.162591, 0.162591)
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 141
 text = "139"
+
+[node name="WearOS_Camera" type="Camera2D" parent="."]
+position = Vector2(170, 170)
+zoom = Vector2(1.32, 1.32)
+editor_draw_screen = false
+script = ExtResource("3_e0ffb")
 
 [editable path="SubViewportContainer/SubViewport2/Marker3D/Gun"]

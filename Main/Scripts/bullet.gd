@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	rotation = $"../../Marker3D".rotation
 	position+= transform.basis * Vector3(0,0,-100) * delta
 

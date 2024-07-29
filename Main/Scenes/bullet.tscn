@@ -106,10 +106,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2g8r2")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u257v"]
-radius = 0.161956
-height = 0.925269
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pmmid"]
 shader = ExtResource("7_afyn6")
 
@@ -132,31 +128,30 @@ shader_parameter/curve = ExtResource("10_lg813")
 [sub_resource type="QuadMesh" id="QuadMesh_e7lja"]
 material = SubResource("ShaderMaterial_pf0x3")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u257v"]
+radius = 0.161956
+height = 0.925269
+
 [node name="Node3D" type="Area3D"]
-transform = Transform3D(49.67, 0, 0, 0, 49.67, 0, 0, 0, 49.67, 0, 0, -8.715)
+transform = Transform3D(49.67, 0, 0, 0, 49.67, 0, 0, 0, 49.67, 0, 0, 0)
 script = ExtResource("1_1qnd4")
 
-[node name="Cylinder_001" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Cylinder_001" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
-[node name="Cylinder_001_Material_Projetil_0" type="MeshInstance3D" parent="Cylinder_001"]
-layers = 2
+[node name="Cylinder_001_Material_Projetil_0" type="MeshInstance3D" parent="Node3D/Cylinder_001"]
 mesh = SubResource("ArrayMesh_5151x")
 
-[node name="Cylinder" type="Node3D" parent="."]
+[node name="Cylinder" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
-[node name="Cylinder_Material_Capsula_0" type="MeshInstance3D" parent="Cylinder"]
-layers = 2
+[node name="Cylinder_Material_Capsula_0" type="MeshInstance3D" parent="Node3D/Cylinder"]
 mesh = SubResource("ArrayMesh_e2fre")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0111282, -0.0236226, -0.150746)
-shape = SubResource("CapsuleShape3D_u257v")
-
-[node name="GPUTrail3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00097139, 0.0104845, -0.371179)
-layers = 2
+[node name="GPUTrail3D" type="GPUParticles3D" parent="Node3D"]
+transform = Transform3D(0.994302, 0, 0, 0, 0.994302, 0, 0, 0, 0.994302, 0, 0, 0)
 amount = 200
 lifetime = 200.0
 explosiveness = 1.0
@@ -170,3 +165,8 @@ color_ramp = ExtResource("9_uqyiw")
 curve = ExtResource("10_lg813")
 billboard = true
 _defaults_have_been_set = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.0982968)
+visibility_parent = NodePath("../Node3D/Cylinder_001/Cylinder_001_Material_Projetil_0")
+shape = SubResource("CapsuleShape3D_u257v")

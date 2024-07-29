@@ -33,7 +33,7 @@ configurations {
 dependencies {
     implementation "androidx.fragment:fragment:$versions.fragmentVersion"
     implementation "androidx.core:core-splashscreen:$versions.splashscreenVersion"
-    implementation 'com.google.android.material:material:1.6.1'
+
     if (rootProject.findProject(":lib")) {
         implementation project(":lib")
     } else if (rootProject.findProject(":godot:lib")) {

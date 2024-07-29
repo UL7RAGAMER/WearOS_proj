@@ -22,7 +22,7 @@ window/size/viewport_height=500
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gd-blender-3d-shortcuts/plugin.cfg")
+enabled=PackedStringArray("res://addons/gd-blender-3d-shortcuts/plugin.cfg", "res://addons/wearos_camera/plugin.cfg")
 
 [global]
 

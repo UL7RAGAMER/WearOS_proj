@@ -3,7 +3,7 @@ extends EditorPlugin
 
 
 func _enter_tree() -> void:
-	add_custom_type("WearOS_Camera","Camera2D",preload("res://camera_2d.gd"),preload("res://icon.svg"))
+	add_custom_type("WearOS_Camera","Camera2D",preload("res://Main/Scripts/camera_2d.gd"),preload("res://Assets/2D/icon.svg"))
 	# Initialization of the plugin goes here.
 	pass
 

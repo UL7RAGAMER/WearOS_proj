@@ -12,15 +12,20 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	sniper_ui()
 	
-	
 func shoot(event:InputEventScreenTouch):
 		var b = bullet.instantiate() as Area3D
-		b.global_position = $Marker3D.global_position
+		b.global_position = $"../Marker2D".global_position
 		$"../../../SubViewport/Bullets".add_child(b)
+		$"Operator valorent4/AnimationPlayer".seek(0)
+		$"Operator valorent4/AnimationPlayer".play("Animation",-1,1.5)
+		await get_tree().create_timer(1.5214).timeout
+		$"Operator valorent4/AnimationPlayer".stop()
+
+
 		pass
 		
 func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch and !scoped:
+	if event is InputEventScreenTouch and scoped:
 		if event.is_pressed():
 			shoot(event)
 func sniper_ui():
