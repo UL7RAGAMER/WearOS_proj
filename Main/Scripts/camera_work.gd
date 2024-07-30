@@ -10,6 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$"../../../Label2".text = str(Input.get_accelerometer())
 	lock_camera()
 	rotaing_camera(5)
 
@@ -20,7 +21,6 @@ func _input(event: InputEvent) -> void:
 			dir = 1
 		elif event.relative.y <0:
 			dir = -1
-		$"../../../Label2".text = str(dir)
 		position.y+=8*dir*get_process_delta_time()
 func rotaing_camera(deg:int) -> void:
 	if Input.is_action_just_released("left") and !(gun.scoped):

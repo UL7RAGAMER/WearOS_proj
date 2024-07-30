@@ -8,7 +8,7 @@ func _ready() -> void:
 	editor_draw_screen = false
 	pass # Replace with function body.
 
-
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$"../Label".text =str(Engine.get_frames_per_second())

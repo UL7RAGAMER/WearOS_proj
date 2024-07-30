@@ -364,19 +364,19 @@ scale = Vector2(0.162591, 0.162591)
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 141
-text = "10"
+text = "145"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 148.664
-offset_top = 142.325
-offset_right = 2128.66
-offset_bottom = 1717.32
+offset_left = 30.1745
+offset_top = 133.416
+offset_right = 2010.17
+offset_bottom = 1708.41
 scale = Vector2(0.162591, 0.162591)
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 141
-text = "139"
+text = "																																																																																																																																														139"
 
 [node name="WearOS_Camera" type="Camera2D" parent="."]
 position = Vector2(170, 170)

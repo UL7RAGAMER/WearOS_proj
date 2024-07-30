@@ -154,6 +154,7 @@ id report_drawn
 id resumeOverCellular
 id right_icon
 id right_side
+id sensorValues
 id special_effects_controller_view_tag
 id splashscreen_icon_view
 id statusText
@@ -185,6 +186,7 @@ id visible_removing_fragment_view_tag
 id wifiSettingsButton
 integer default_icon_animation_duration
 integer status_bar_notification_info_maxnum
+layout activity_main
 layout custom_dialog
 layout downloading_expansion
 layout godot_app_layout
