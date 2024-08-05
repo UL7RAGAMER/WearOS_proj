@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=4 uid="uid://j86dvdyviohc"]
 
+[ext_resource type="Script" path="res://Main/Scenes/time.gd" id="1_n2db5"]
 [ext_resource type="Script" path="res://Main/Scripts/camera_work.gd" id="1_xjy3m"]
-[ext_resource type="Script" path="res://Main/Scripts/marker_3d.gd" id="3_b1vk7"]
 [ext_resource type="Script" path="res://Main/Scripts/camera_2d.gd" id="3_e0ffb"]
 [ext_resource type="Script" path="res://Main/Scripts/gun.gd" id="3_ew13m"]
 [ext_resource type="PackedScene" uid="uid://biwwomf3ggs2y" path="res://Main/Scenes/char.tscn" id="3_sb0fo"]
@@ -230,6 +230,7 @@ texture_filter = 1
 offset_right = 340.0
 offset_bottom = 340.0
 stretch = true
+script = ExtResource("1_n2db5")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -275,10 +276,9 @@ transform = Transform3D(43.45, 0, 0, 0, 43.45, 0, 0, 0, 43.45, 0, 15.3526, 0)
 [node name="Node3D" parent="SubViewportContainer/SubViewport/Bullets" instance=ExtResource("5_eiv2m")]
 visible = false
 
-[node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("x")]
-transform = Transform3D(3.415, 0, -5.97098e-07, 0, 3.415, 0, 5.97098e-07, 0, 3.415, -0.008, 11, -0.258)
-script = ExtResource("3_b1vk7")
-x = NodePath("../../SubViewport2/Marker3D")
+[node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(3.415, 0, -5.97098e-07, 0, 3.415, 0, 5.97098e-07, 0, 3.415, -0.008, 5.49, -0.258)
+script = ExtResource("1_xjy3m")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Marker3D"]
 transform = Transform3D(1.46032, 0.00160975, 0.000646863, -0.00160994, 1.46032, 0.00041599, -0.000646404, -0.000416703, 1.46032, -0.493254, 0.0178289, 4.27571)
@@ -295,7 +295,7 @@ scale = Vector2(1.57623, 1.57623)
 texture = ExtResource("5_mu2fn")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="SubViewportContainer/Sniper ui"]
-position = Vector2(121.859, 258.036)
+position = Vector2(225.45, 112.561)
 scale = Vector2(0.978808, 0.978808)
 texture_normal = ExtResource("6_p8xw0")
 action = "snipe"
@@ -368,9 +368,21 @@ text = "145"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 30.1745
-offset_top = 133.416
+offset_top = 166.379
 offset_right = 2010.17
-offset_bottom = 1708.41
+offset_bottom = 1741.37
+scale = Vector2(0.162591, 0.162591)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 1, 0.0984955, 1)
+theme_override_font_sizes/font_size = 141
+text = "																																																																																																																																														139"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 30.1745
+offset_top = 90.6528
+offset_right = 2010.17
+offset_bottom = 1665.65
 scale = Vector2(0.162591, 0.162591)
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -383,5 +395,22 @@ position = Vector2(170, 170)
 zoom = Vector2(1.32, 1.32)
 editor_draw_screen = false
 script = ExtResource("3_e0ffb")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 130.961
+offset_top = 131.754
+offset_right = 138.961
+offset_bottom = 139.754
+scale = Vector2(9.12561, 8.48183)
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 131.755
+offset_top = 241.285
+offset_right = 139.755
+offset_bottom = 249.285
+scale = Vector2(9.12561, 8.48183)
+
+[connection signal="pressed" from="Button" to="SubViewportContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="SubViewportContainer" method="_on_button_2_pressed"]
 
 [editable path="SubViewportContainer/SubViewport2/Marker3D/Gun"]

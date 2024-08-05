@@ -16,7 +16,8 @@
         android:required="true" />
     <uses-feature android:name="android.hardware.vulkan.level" android:required="false" />
     <uses-feature android:name="android.hardware.vulkan.version" android:required="false" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.BODY_SENSORS" />
     <application
         android:label="@string/godot_project_name_string"

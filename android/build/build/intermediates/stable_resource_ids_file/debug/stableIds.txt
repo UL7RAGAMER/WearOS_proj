@@ -1,3 +1,4 @@
+com.wearos:xml/device_admin_receiver = 0x7f0e0000
 com.wearos:styleable/GradientColor = 0x7f0d0006
 com.wearos:styleable/FontFamilyFont = 0x7f0d0003
 com.wearos:styleable/FontFamily = 0x7f0d0002
@@ -266,7 +267,7 @@ com.wearos:string/state_failed_fetching_url = 0x7f0b000c
 com.wearos:drawable/compat_splash_screen = 0x7f060000
 com.wearos:id/accessibility_custom_action_3 = 0x7f070018
 com.wearos:animator/fragment_fade_enter = 0x7f020002
-com.wearos:xml/godot_provider_paths = 0x7f0e0000
+com.wearos:xml/godot_provider_paths = 0x7f0e0001
 com.wearos:attr/fontProviderAuthority = 0x7f030002
 com.wearos:attr/queryPatterns = 0x7f03000f
 com.wearos:dimen/notification_right_icon_size = 0x7f05000f

@@ -1,80 +1,49 @@
+/**************************************************************************/
+/*  GodotApp.java                                                         */
+/**************************************************************************/
+/*                         This file is part of:                          */
+/*                             GODOT ENGINE                               */
+/*                        https://godotengine.org                         */
+/**************************************************************************/
+/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
+/*                                                                        */
+/* Permission is hereby granted, free of charge, to any person obtaining  */
+/* a copy of this software and associated documentation files (the        */
+/* "Software"), to deal in the Software without restriction, including    */
+/* without limitation the rights to use, copy, modify, merge, publish,    */
+/* distribute, sublicense, and/or sell copies of the Software, and to     */
+/* permit persons to whom the Software is furnished to do so, subject to  */
+/* the following conditions:                                              */
+/*                                                                        */
+/* The above copyright notice and this permission notice shall be         */
+/* included in all copies or substantial portions of the Software.        */
+/*                                                                        */
+/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,        */
+/* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF     */
+/* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. */
+/* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY   */
+/* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,   */
+/* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE      */
+/* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
+/**************************************************************************/
+
 package com.godot.game;
 
 import org.godotengine.godot.GodotActivity;
+
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import android.widget.Toast;
+
 import androidx.core.splashscreen.SplashScreen;
 
+/**
+ * Template activity for Godot Android builds.
+ * Feel free to extend and modify this class for your custom logic.
+ */
 public class GodotApp extends GodotActivity {
-    private static final long TIMEOUT_DURATION = 10 * 1000L; // 10 seconds in milliseconds
-    private static final long APP_CLOSE_TIMEOUT_DURATION = 60 * 1000L; // 1 minute in milliseconds
-
-    private Handler handler = new Handler();
-    private Handler closeAppHandler = new Handler();
-    private Runnable timeoutRunnable = new Runnable() {
-        @Override
-        public void run() {
-            handleTimeout();
-        }
-    };
-    private Runnable closeAppRunnable = new Runnable() {
-        @Override
-        public void run() {
-            closeApp();
-        }
-    };
-    private float originalBrightness;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        SplashScreen.installSplashScreen(this);
-        super.onCreate(savedInstanceState);
-        // Save the original brightness
-        originalBrightness = getWindow().getAttributes().screenBrightness;
-    }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        resetTimeout(); // Reset timeouts on any touch event
-        return super.dispatchTouchEvent(event);
-    }
-
-    private void resetTimeout() {
-        // Restore original brightness on user interaction
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = originalBrightness;
-        getWindow().setAttributes(layoutParams);
-
-        handler.removeCallbacks(timeoutRunnable);
-        handler.postDelayed(timeoutRunnable, TIMEOUT_DURATION);
-
-        // Reset the close app timeout as well
-        closeAppHandler.removeCallbacks(closeAppRunnable);
-        closeAppHandler.postDelayed(closeAppRunnable, APP_CLOSE_TIMEOUT_DURATION);
-    }
-
-    private void handleTimeout() {
-        // Dim the screen
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.0f; // Dim the screen to 10% brightness
-        getWindow().setAttributes(layoutParams);
-    }
-
-    private void closeApp() {
-        // Show a toast message before closing
-        Toast.makeText(this, "Closing app due to inactivity", Toast.LENGTH_SHORT).show();
-
-        // Exit the app
-        finish();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        handler.removeCallbacksAndMessages(null); // Remove any pending callbacks to avoid memory leaks
-        closeAppHandler.removeCallbacksAndMessages(null); // Remove any pending close app callbacks
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		SplashScreen.installSplashScreen(this);
+		super.onCreate(savedInstanceState);
+	}
 }
