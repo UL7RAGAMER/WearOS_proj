@@ -10,12 +10,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	lock_camera()
 	rotaing_camera(5)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenDrag and !(gun.scoped):
-		#scroll(event)
+		scroll(event)
 		pass
 func rotaing_camera(deg:int) -> void:
 	if Input.is_action_just_released("left") and !(gun.scoped):
@@ -33,10 +34,9 @@ func lock_camera() -> void:
 func scroll(event:InputEventScreenDrag):
 	var o:Vector2
 	if Input.is_action_just_pressed("lmb"):
-		print('asd')
-		o = event.position
+		o = Vector2(0,170)
 	if Input.is_action_pressed("lmb"):
-		print((event.position.y - o.y))
-
-		position.y += (event.position.y - o.y)*10
+		print(event.position.y - o.y)
+		
+		position.y += (event.position.y)
 		

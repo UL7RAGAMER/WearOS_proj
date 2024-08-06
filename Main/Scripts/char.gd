@@ -7,7 +7,7 @@ class_name Enemy
 func _ready() -> void:
 	$AnimationPlayer.play("mixamo_com")
 	pass # Replace with function body.
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

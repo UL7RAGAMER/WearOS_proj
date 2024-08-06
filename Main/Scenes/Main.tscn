@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://j86dvdyviohc"]
 
-[ext_resource type="Script" path="res://Main/Scenes/time.gd" id="1_n2db5"]
+[ext_resource type="Script" path="res://Main/Android_connector.gd" id="1_n2db5"]
 [ext_resource type="Script" path="res://Main/Scripts/camera_work.gd" id="1_xjy3m"]
 [ext_resource type="Script" path="res://Main/Scripts/camera_2d.gd" id="3_e0ffb"]
 [ext_resource type="Script" path="res://Main/Scripts/gun.gd" id="3_ew13m"]
@@ -363,10 +363,12 @@ offset_bottom = 1578.73
 scale = Vector2(0.162591, 0.162591)
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 141
 text = "145"
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_left = 30.1745
 offset_top = 166.379
 offset_right = 2010.17
@@ -379,6 +381,7 @@ theme_override_font_sizes/font_size = 141
 text = "																																																																																																																																														139"
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 offset_left = 30.1745
 offset_top = 90.6528
 offset_right = 2010.17
@@ -388,29 +391,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 141
-text = "																																																																																																																																														139"
+text = "asd"
 
 [node name="WearOS_Camera" type="Camera2D" parent="."]
 position = Vector2(170, 170)
 zoom = Vector2(1.32, 1.32)
 editor_draw_screen = false
 script = ExtResource("3_e0ffb")
-
-[node name="Button" type="Button" parent="."]
-offset_left = 130.961
-offset_top = 131.754
-offset_right = 138.961
-offset_bottom = 139.754
-scale = Vector2(9.12561, 8.48183)
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 131.755
-offset_top = 241.285
-offset_right = 139.755
-offset_bottom = 249.285
-scale = Vector2(9.12561, 8.48183)
-
-[connection signal="pressed" from="Button" to="SubViewportContainer" method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="SubViewportContainer" method="_on_button_2_pressed"]
 
 [editable path="SubViewportContainer/SubViewport2/Marker3D/Gun"]
