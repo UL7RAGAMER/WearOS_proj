@@ -1,6 +1,5 @@
-[gd_scene load_steps=26 format=4 uid="uid://j86dvdyviohc"]
+[gd_scene load_steps=27 format=4 uid="uid://j86dvdyviohc"]
 
-[ext_resource type="Script" path="res://Main/Android_connector.gd" id="1_n2db5"]
 [ext_resource type="Script" path="res://Main/Scripts/camera_work.gd" id="1_xjy3m"]
 [ext_resource type="Script" path="res://Main/Scripts/camera_2d.gd" id="3_e0ffb"]
 [ext_resource type="Script" path="res://Main/Scripts/gun.gd" id="3_ew13m"]
@@ -9,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cb7tseclovjt3" path="res://Main/Scenes/bullet.tscn" id="5_eiv2m"]
 [ext_resource type="Texture2D" uid="uid://521sywnex1y1" path="res://Assets/2D/realistic-sniper-crosshair-with-lines/SNIPER_LOOK_FINDER_Mesa_de_trabajo_1.png" id="5_mu2fn"]
 [ext_resource type="Texture2D" uid="uid://c5dr21mh63ior" path="res://Assets/2D/CrossHair.png" id="6_p8xw0"]
+[ext_resource type="Texture2D" uid="uid://b48lgqde7c37r" path="res://Assets/2D/arrow.png" id="6_thn10"]
 [ext_resource type="Texture2D" uid="uid://b5vey443iaq0j" path="res://Assets/2D/panorama_sky.jpg" id="7_y7ybx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwr61"]
@@ -94,6 +94,8 @@ albedo_color = Color(1, 0.574595, 0.626963, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_ma7sh"]
 material = SubResource("StandardMaterial3D_ojsxn")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyrus"]
+
 [sub_resource type="Animation" id="Animation_whj66"]
 resource_name = "Gun"
 tracks/0/type = "value"
@@ -156,6 +158,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, true, false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sniper ui/TouchScreenButton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.995917, 0.998287),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(231.249, 120.034), Vector2(130.469, 274.208)]
+}
 
 [sub_resource type="Animation" id="Animation_jhtuq"]
 length = 0.001
@@ -195,6 +209,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(-0.252, -0.104, 9.417)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sniper ui/TouchScreenButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(229.681, 121.024)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cy60j"]
 _data = {
@@ -230,7 +256,6 @@ texture_filter = 1
 offset_right = 340.0
 offset_bottom = 340.0
 stretch = true
-script = ExtResource("1_n2db5")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -295,10 +320,22 @@ scale = Vector2(1.57623, 1.57623)
 texture = ExtResource("5_mu2fn")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="SubViewportContainer/Sniper ui"]
-position = Vector2(225.45, 112.561)
-scale = Vector2(0.978808, 0.978808)
+position = Vector2(229.681, 121.024)
+scale = Vector2(0.8233, 0.814423)
 texture_normal = ExtResource("6_p8xw0")
 action = "snipe"
+
+[node name="Area2D" type="Area2D" parent="SubViewportContainer/Sniper ui"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/Sniper ui/Area2D"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(170.646, 169.852)
+scale = Vector2(12.8799, 12.8799)
+shape = SubResource("CircleShape2D_eyrus")
+
+[node name="Arrow" type="Sprite2D" parent="SubViewportContainer/Sniper ui/Area2D"]
+position = Vector2(29.3, 173.402)
+texture = ExtResource("6_thn10")
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
@@ -398,5 +435,8 @@ position = Vector2(170, 170)
 zoom = Vector2(1.32, 1.32)
 editor_draw_screen = false
 script = ExtResource("3_e0ffb")
+
+[connection signal="input_event" from="SubViewportContainer/Sniper ui/Area2D" to="SubViewportContainer/SubViewport/Enemy" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="SubViewportContainer/Sniper ui/Area2D" to="SubViewportContainer/SubViewport2/Marker3D/Gun" method="_on_area_2d_input_event"]
 
 [editable path="SubViewportContainer/SubViewport2/Marker3D/Gun"]

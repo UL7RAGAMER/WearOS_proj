@@ -24,10 +24,6 @@ func shoot(event:InputEventScreenTouch):
 
 		pass
 		
-func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch and scoped:
-		if event.is_pressed():
-			shoot(event)
 func sniper_ui():
 	if Input.is_action_just_pressed("snipe"):
 		if !scoped:
@@ -37,3 +33,12 @@ func sniper_ui():
 			$"../../AnimationPlayer".play_backwards("Gun")
 			scoped = false
 			
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	
+	if event is InputEventScreenTouch and scoped:
+		print(event)
+		if event.is_pressed():
+			shoot(event)
+	pass # Replace with function body.

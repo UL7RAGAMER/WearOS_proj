@@ -1,6 +1,7 @@
 extends Marker3D
 var cur_pos = Vector3.ZERO
 var last_pos = Vector3.ZERO
+var o:Vector2
 @onready var gun: Gun = %Gun
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,11 +33,5 @@ func lock_camera() -> void:
 	pass
 	
 func scroll(event:InputEventScreenDrag):
-	var o:Vector2
-	if Input.is_action_just_pressed("lmb"):
-		o = Vector2(0,170)
-	if Input.is_action_pressed("lmb"):
-		print(event.position.y - o.y)
-		
-		position.y += (event.position.y)
-		
+
+	pass
